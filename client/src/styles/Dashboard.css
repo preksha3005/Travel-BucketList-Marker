@@ -1,0 +1,250 @@
+body {
+  background-color: #eaf2fa; /* soft light background */
+}
+
+/* Page wrapper */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* Header above the map */
+.dashboard-header {
+  background: linear-gradient(135deg, #9ccded, #e6e8ec);
+  padding: 20px 24px;
+  border-radius: 14px;
+  border: 1px solid #072438;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dashboard-header p {
+  margin-top: 6px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* Loading state */
+.dashboard-loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* 🌍 MAP ITSELF */
+.dashboard-map {
+  height: calc(100vh - 260px);
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  border: 1px solid #e2e8f0;
+}
+
+/* Popup button (Mark visited / Add place) */
+.popup-btn {
+  margin-top: 8px;
+  margin-right: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4285f4, #2563eb);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.popup-btn:hover {
+  background: linear-gradient(135deg, #357ae8, #1e40af);
+}
+
+/* Input inside popup */
+.popup-input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.popup-textarea {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 6px;
+  padding: 6px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.map-search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+.map-search input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.map-search input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.map-search button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4285f4, #2563eb);
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.map-search button:hover {
+  background: linear-gradient(135deg, #357ae8, #1e40af);
+}
+
+.map-search-error {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #dc2626;
+}
+
+.note-saved-msg {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    padding: 22px 18px;
+  }
+  .dashboard-header h2 {
+    font-size: 1.95rem;
+  }
+  .dashboard-header p{
+    font-size: 1.2rem;
+  }
+  .dashboard-map {
+    height: calc(100vh - 270px);
+  }
+  .map-search input{
+    font-size: 1.4rem;
+  }
+  .map-search button{
+    font-size: 1.2rem;
+  }
+  .map-search-error{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 18px 16px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-header p {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-map {
+    height: calc(100vh - 290px);
+  }
+
+  .map-search {
+    padding: 12px;
+  }
+
+  .map-search input,
+  .map-search button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .dashboard {
+    padding: 14px 12px;
+  }
+
+  /* Header */
+  .dashboard-header {
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-header p {
+    font-size: 0.85rem;
+  }
+
+  /* Search bar stacks */
+  .map-search {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .map-search input,
+  .map-search button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  /* Map height reduced */
+  .dashboard-map {
+    height: calc(100vh - 320px);
+    border-radius: 12px;
+  }
+
+  /* Popup UI */
+  .popup-input,
+  .popup-textarea {
+    font-size: 0.8rem;
+  }
+
+  .popup-btn {
+    padding: 7px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  .note-saved-msg {
+    font-size: 0.75rem;
+  }
+}
